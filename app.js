@@ -4,11 +4,8 @@ const port = 3000;
 
 const studentModel = require('./users'); 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
-app.get('/allstudents',async (req, res) => {
+app.get('/',async (req, res) => {
     try {
       const allStudents = await studentModel.find({});
     // Create a new PDF document
