@@ -2,10 +2,19 @@ const express = require('express')
 const app = express()
 const port = 3000;
 
+app.use(cors({
+  origin: 'http://example.com', // specify allowed origin
+  methods: 'GET,POST', // specify allowed HTTP methods
+  Credentials:true, // specify allowed headers
+}));
+
+
 const studentModel = require('./users'); 
+app.get('/', (req, res) => {
+  res.send('hello');
+});
 
-
-app.get('/',async (req, res) => {
+app.get('/all',async (req, res) => {
     try {
       const allStudents = await studentModel.find({});
     // Create a new PDF document
