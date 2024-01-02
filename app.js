@@ -3,7 +3,7 @@ const app = express()
 const port = 3000;
 
 app.use(cors({
-  origin: 'http://example.com', // specify allowed origin
+  origin: 'https://toodoo-delta.vercel.app/', // specify allowed origin
   methods: 'GET,POST', // specify allowed HTTP methods
   Credentials:true, // specify allowed headers
 }));
